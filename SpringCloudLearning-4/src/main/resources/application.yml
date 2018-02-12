@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8763/eureka/
+server:
+  port: 8764
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-RestTemplate
+    # api-b 是feign的，无法路由到，暂时解决不了
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign

@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8763/eureka/
+# SERVICE CONSUMER 
+server:
+  port: 8760
+spring:
+  application:
+    name: service-RestTemplate
